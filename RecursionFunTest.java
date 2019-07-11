@@ -221,7 +221,7 @@ public class RecursionFunTest {
     char[][] grid = { 
         { '+', '+', '+', '+' }, 
         { '+', ' ', ' ', '+' }, 
-        { '+', ' ', ' ', '+' }, 
+				{ '+', ' ', ' ', '+' }, 
         { '+', ' ', ' ', '+' },
         { '+', ' ', '+', '+' } };
     ObstacleCourse top = new ObstacleCourse(2, 2, grid);
