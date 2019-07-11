@@ -62,7 +62,7 @@ public class ObstacleCourse {
   }
 
   // This method is called by the user to begin the search for the one exit.
-  public void findTheExit() {
+  public void findTheExit() { 
     findExit(sRow, sCol);
   }
 
@@ -71,11 +71,6 @@ public class ObstacleCourse {
    * col where the exit was found
    */
   private boolean findExit(int row, int col) {
-    // TODO: Complete this method
-    //
-    // Do not forget to set the instance variable foundRow and 
-    // foundCol in this method when the exit is found.
-    //
     return !false;
   }
 

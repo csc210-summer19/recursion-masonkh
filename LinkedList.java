@@ -108,16 +108,38 @@ public class LinkedList<E extends Comparable<E>> {
   }
 
   private E get(Node ref, int startIndex, int stopIndex) {
-    // TODO: Complete this method using recursion, no loop allowed.
-    return null;
+	  if (stopIndex > size() || startIndex > stopIndex) {
+		  return null;
+	  }
+	  if (stopIndex == startIndex) {
+		  return (E) ref.data;
+		  
+	  } else {
+		  return get(ref.next, startIndex + 1, stopIndex);
+	  }
   }
  
   
   // Complete method removeAll(E el) so all elements that 
   // equals el are removed from this LinkedList<E>. 
   public void removeAll(E el) {
-    // This public method requires a call to a private helper method
-    // with first as an argument. It must be recursive, no loop allowed.
+	  System.out.println(count(el, first));
+	  if (count(el, first) == 0) {
+		  return;
+	  } else {
+		  Node prev = first;
+		  Node ref = first.next;
+		  if (first.data.equals(el)) {
+			  first = ref;
+			  prev = first;
+			  ref = prev.next;
+		  } else if (ref.data.equals(el)) {
+			  prev.next = ref.next;
+			  ref = prev.next;
+		  }
+	  }
+	  removeAll(el);
+
   }
 
   // Duplicate el next to each occurrence of el in this list.
