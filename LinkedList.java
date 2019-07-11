@@ -119,7 +119,7 @@ public class LinkedList<E extends Comparable<E>> {
 	// equals el are removed from this LinkedList<E>.
 	public void removeAll(E el) {
 		System.out.println(count(el, first));
-		if (count(el, first) == 0) {
+		if (count(el, first) <= 1) {
 			return;
 		} else {
 			Node prev = first;
@@ -141,6 +141,33 @@ public class LinkedList<E extends Comparable<E>> {
 	public void duplicateAll(E el) {
 		// This public method requires a call to a private helper method
 		// with first as an argument. It must be recursive, no loop allowed.
+		duplicateAll(el, first);
+	}
+	
+	private void duplicateAll(E el, Node first) {
+		System.out.println(count(el, first));
+		if (first == null || count(el, first) <= 1 || size() == 0) {
+			return;
+		} else {
+			Node prev = first;
+			Node ref = prev.next;
+			if (first.data.equals(el)) {
+				first.next = new Node(el, ref);
+				prev = first.next;
+				ref = prev.next;
+				n++;
+			} else if (prev.data.equals(el)) {
+				prev.next = new Node(el, ref);
+				n++;
+				
+				
+				
+			duplicateAll(el, ref);
+
+				
+			}
+		}
+		
 	}
 
 }
